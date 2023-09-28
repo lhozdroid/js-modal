@@ -13,6 +13,7 @@ class Modal {
 
     #backdrop = null;
     #modal = null;
+    #onClose = null;
 
     /**
      * Default constructor
@@ -23,6 +24,14 @@ class Modal {
 
         this.#setBackdrop();
         this.#setModal();
+    }
+
+    /**
+     * Sets the on close event
+     * @param method
+     */
+    set onClose(method) {
+        this.#onClose = method;
     }
 
     /**
@@ -125,6 +134,8 @@ class Modal {
         setTimeout(() => {
             this.#backdrop.remove();
             this.#modal.remove();
+
+            if (this.#onClose != null) this.#onClose(this);
         }, 1000);
     }
 
@@ -195,7 +206,9 @@ class Modal {
             return `
                 <div class="modal-spinner">
                     <div class="spinner-icon ${this.#config.spinner}"></div>
-                    <span class="spinner-message">${this.#config.message}</span>
+                    <div class="spinner-message">
+                        <span>${this.#config.message}</span>
+                    </div>
                 </div>
             `;
         }

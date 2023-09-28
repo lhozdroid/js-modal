@@ -49,7 +49,7 @@
 
 .modal > .modal-body {
     display: block;
-    height: 50pt;
+    min-height: 50pt;
     border-radius: 0 5pt;
     padding: 15pt 10pt;
     font-size: 1.3rem;
@@ -237,11 +237,14 @@
 }
 
 .spinner-message {
-    display: inline-block;
-    top: 20pt;
+    display: flex;
+    width: 80%;
     position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    align-items: center;
     font-size: 1.4rem;
-    margin: 0 10pt;
 }
 
 .spinner-icon.circles {

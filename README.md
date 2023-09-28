@@ -1,82 +1,132 @@
-# Modal
+# Vanilla JS Modal
 
-A simple JavaScript class for creating modal dialogs.
+- [Description](#description)
+- [Features](#features)
+- [Usage](#usage)
+  - [Instantiation](#instantiation)
+  - [Modal Types](#modal-types)
+    - [Success Modal](#success-modal)
+    - [Warning Modal](#warning-modal)
+    - [Danger Modal](#danger-modal)
+    - [Light Modal](#light-modal)
+    - [Dark Modal](#dark-modal)
+  - [Loading Modal](#loading-modal)
+  - [Close the Modal](#close-the-modal)
+  - [Event Handling](#event-handling)
+- [Modal Types and Spinners](#modal-types-and-spinners)
+- [License](#license)
 
-## Usage
+## Description <a name="description"></a>
 
-### Creating a Success Modal
+The Vanilla JS Modal is a lightweight javascript class for creating dialog or loading modals. It provides a simple way to generate modals with different styles such as success, warning, danger, light, and dark, along with customizable messages.
+
+### Features <a name="features"></a>
+
+- Modal types: success, warning, danger, dark, light.
+- Loading modals with various spinner options.
+- Closable modals with a close button.
+- Customizable title and message.
+
+## Usage <a name="usage"></a>
+
+### Instantiation <a name="instantiation"></a>
+
+To create a new modal instance, you can use the Modal class. You can customize the modal by passing a configuration object.
 
 ```javascript
-const successModal = Modal.success("This is a success message");
-successModal.close(); // Close the modal
-````
-
-### Creating a Warning Modal
-
-```javascript
-const warningModal = Modal.warning("This is a warning message");
-warningModal.close(); // Close the modal
+const myModal = new Modal({
+    type: ModalType.SUCCESS,   // Modal type (default: ModalType.DANGER)
+    class: "custom-modal",     // Additional CSS class for customization
+    title: "Success",          // Modal title (default: "Alert")
+    message: "Operation successful!", // Modal message (default: "Modal message")
+    closable: true,            // Whether the modal can be closed (default: true)
+    spinner: null              // Spinner type for loading modals (default: null)
+});
 ```
 
-### Creating a Danger Modal
+### Modal Types <a name="modal-types"></a>
+
+The Modal class includes static methods for creating different types of modals.
+
+#### Success Modal <a name="success-modal"></a>
 
 ```javascript
-const dangerModal = Modal.danger("This is a danger message");
-dangerModal.close(); // Close the modal
+const successModal = Modal.success("Operation successful", "Success", true);
 ```
 
-### Creating a Light Modal
+#### Warning Modal <a name="warning-modal"></a>
 
 ```javascript
-const lightModal = Modal.light("This is a light message");
-lightModal.close(); // Close the modal
+const warningModal = Modal.warning("Warning message", "Warning", true);
 ```
 
-### Creating a Dark Modal
+#### Danger Modal <a name="danger-modal"></a>
 
 ```javascript
-const darkModal = Modal.dark("This is a dark message");
-darkModal.close(); // Close the modal
+const dangerModal = Modal.danger("Error occurred", "Danger", true);
 ```
 
-### Creating a Loading Modal
+#### Light Modal <a name="light-modal"></a>
 
 ```javascript
-const loadingModal = Modal.loading("Loading...", ModalSpinner.SPINNER);
-// Do some asynchronous operation
-// loadingModal.close(); // Close the modal when the operation is done
+const lightModal = Modal.light("Informational message", "Message", true);
 ```
 
-## API
+#### Dark Modal <a name="dark-modal"></a>
 
-### Modal Options
+```javascript
+const darkModal = Modal.dark("Dark-themed message", "Message", true);
+```
 
-- **type**: Type of the modal (ModalType.DANGER, ModalType.WARNING, ModalType.SUCCESS, ModalType.DARK, ModalType.LIGHT)
-- **class**: Additional CSS class for the modal
-- **title**: Title of the modal
-- **message**: Content/message of the modal
-- **closable**: Boolean, whether the modal is closable or not
-- **spinner**: Type of spinner for loading modals (ModalSpinner.SPINNER, ModalSpinner.CIRCLE, etc.)
+#### Loading Modal <a name="loading-modal"></a>
 
-### Methods
+The loading static method creates a loading modal with a specified message and spinner type.
 
-- **close()**: Closes the modal
+```javascript
+const loadingModal = Modal.loading("Loading data...", ModalSpinner.SPINNER);
+```
 
-### Modal Types
+### Closing the Modal <a name="close-the-modal"></a>
 
-- ModalType.DANGER
-- ModalType.WARNING
-- ModalType.SUCCESS
-- ModalType.DARK
-- ModalType.LIGHT
+You can close the modal programmatically using the close method.
 
-### Spinner Types
+```javascript
+myModal.close();
+```
 
-- ModalSpinner.CIRCLE
-- ModalSpinner.GEAR
-- ModalSpinner.GEARS
-- ModalSpinner.HOURGLASS
-- ModalSpinner.IPHONE_1
-- ModalSpinner.IPHONE_2
-- ModalSpinner.SEARCH
-- ModalSpinner.SPINNER
+### Event Handling <a name="event-handling"></a>
+
+You can set an event handler for the modal's close action using the onClose property.
+
+```javascript
+myModal.onClose = (closedModal) => {
+    console.log("Modal closed:", closedModal);
+};
+```
+
+## Modal Types and Spinners <a name="modal-types-and-spinners"></a>
+
+The ModalType and ModalSpinner objects define the available modal types and spinner options.
+
+```javascript
+// Modal types
+const ModalType = {
+    DANGER: "danger",
+    WARNING: "warning",
+    SUCCESS: "success",
+    DARK: "dark",
+    LIGHT: "light"
+};
+
+// Modal spinners
+const ModalSpinner = {
+    CIRCLE: "circle",
+    GEAR: "gear",
+    // ... (other spinner options)
+    SPINNER: "spinner"
+};
+```
+
+## License <a name="licensegith"></a>
+
+This project is licensed under the MIT License.
