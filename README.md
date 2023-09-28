@@ -18,7 +18,7 @@
 
 ## Description <a name="description"></a>
 
-The Vanilla JS Modal is a lightweight javascript class for creating dialog or loading modals. It provides a simple way to generate modals with different styles such as success, warning, danger, light, and dark, along with customizable messages.
+The JS Modal is a lightweight javascript class for creating dialog or loading modals. It provides a simple way to generate modals with different styles such as success, warning, danger, light, and dark, along with customizable messages.
 
 ### Features <a name="features"></a>
 
