@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Vanilla Modal</title>
+
+		<link href="dist/css/modal.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Select a modal option to test</h1>
+		<button onclick="openModal('success')">Open Success</button>
+		<button onclick="openModal('warning')">Open Warning</button>
+		<button onclick="openModal('danger')">Open Danger</button>
+		<button onclick="openModal('light')">Open Light</button>
+		<button onclick="openModal('dark')">Open Dark</button>
+		<button onclick="openModal('loading')">Open Loading</button>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum semper mattis. Nulla tempus condimentum lectus nec hendrerit. Nulla blandit cursus mi ac dapibus. Nulla id viverra est. Donec ultrices luctus leo, non interdum orci
+			feugiat in. Vivamus at odio placerat, sollicitudin ante vitae, feugiat velit. Vivamus maximus porta elit, ut molestie nibh vehicula ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis
+			volutpat dui, in porttitor nulla.<br><br>
+
+			Morbi metus ligula, tempor eget ullamcorper vitae, mattis in erat. Fusce pretium leo at ligula porta, quis sodales lorem eleifend. Aenean libero neque, porta ac maximus a, luctus eu est. Morbi sollicitudin non lectus in laoreet. Ut nec metus ut
+			tellus efficitur vehicula non eu tortor. In vel dui vulputate, luctus ligula eu, fringilla nisl. Cras vehicula et nisl in faucibus. Donec auctor egestas sem vel tincidunt. Integer consectetur porttitor felis, sed vestibulum sem euismod ac.
+			Nulla venenatis pulvinar quam non facilisis. Vivamus sit amet nibh lectus. Sed justo lectus, tempor a scelerisque et, accumsan et dui.<br><br>
+
+			Vestibulum rhoncus urna ut rhoncus venenatis. Suspendisse ac dignissim erat. Donec porttitor quam nulla, sit amet consequat magna vestibulum quis. Sed mi nibh, euismod vitae hendrerit ut, fermentum nec magna. Nullam auctor elit ut est vulputate
+			suscipit. Etiam lectus nulla, tincidunt sed pulvinar lobortis, venenatis vel odio. Mauris lacus libero, tempor a nunc ac, gravida consequat libero. Fusce at mi ullamcorper, fermentum leo ut, congue elit. Morbi a aliquet mi, ac finibus ipsum.
+			Maecenas et urna vitae sem tempor mollis. Curabitur vestibulum ligula et eros facilisis varius. Nullam sed placerat leo, at pharetra augue.<br><br>
+
+			Donec in nisi justo. Aliquam lacus felis, commodo at pulvinar egestas, ultrices sed urna. Etiam elementum hendrerit diam posuere egestas. Nunc a erat finibus, dapibus quam et, consequat arcu. Cras purus metus, feugiat placerat dignissim sit
+			amet, tempus sit amet mauris. Fusce augue mi, condimentum non mattis suscipit, dictum vitae ipsum. Fusce eleifend quam velit, et sollicitudin tellus euismod vitae. Curabitur placerat ex in massa pellentesque elementum. Praesent efficitur massa
+			eu molestie lacinia. Vivamus lacinia, lorem ut sodales viverra, nisi purus facilisis est, non congue enim metus sed arcu. Phasellus a turpis tincidunt, facilisis ligula et, euismod dolor. Nunc nisl diam, mollis in lectus eu, commodo lacinia
+			velit. Donec dapibus condimentum leo ut rhoncus.<br><br>
+
+			Mauris enim justo, suscipit id justo quis, feugiat porta sem. Sed felis sem, vulputate at ipsum ac, fringilla aliquam ipsum. Integer leo metus, egestas varius sem id, porta aliquet nulla. Etiam varius tristique arcu, sit amet interdum orci
+			ultricies eu. Duis quis urna vel urna porta volutpat sed vitae sem. Donec molestie massa laoreet nisl mollis, vitae volutpat massa tempor. Suspendisse iaculis, arcu at placerat ornare, erat ante viverra tortor, eget mattis odio nunc ut ligula.
+			Aliquam sodales ex a augue maximus imperdiet. Etiam tempor non nunc vel cursus. Sed cursus at sem eu mattis. Cras consectetur sodales purus, eu fringilla lorem posuere in. Donec sagittis hendrerit tincidunt. Aenean vitae maximus mi, id egestas
+			lectus. Nam in commodo odio. Nunc iaculis sapien non sapien dignissim, et auctor ligula consectetur.<br><br>
+		</p>
+
+		<script src="dist/js/modal.js"></script>
+		<script>
+            /**
+             * Opens the type of dialog
+             * @param type
+             */
+            const openModal = function (type) {
+                const modal = Modal[type](type);
+                if (type === "loading") {
+                    setTimeout(() => modal.close(), 3000);
+                }
+            };
+		</script>
+	</body>
+</html>
