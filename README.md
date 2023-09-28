@@ -35,12 +35,12 @@ To create a new modal instance, you can use the Modal class. You can customize t
 
 ```javascript
 const myModal = new Modal({
-    type: ModalType.SUCCESS,   // Modal type (default: ModalType.DANGER)
-    class: "custom-modal",     // Additional CSS class for customization
-    title: "Success",          // Modal title (default: "Alert")
-    message: "Operation successful!", // Modal message (default: "Modal message")
-    closable: true,            // Whether the modal can be closed (default: true)
-    spinner: null              // Spinner type for loading modals (default: null)
+    type: ModalType.SUCCESS,           // Modal type (default: ModalType.DANGER)
+    class: "custom-modal",             // Additional CSS class for customization
+    title: "Success",                  // Modal title (default: "Alert")
+    message: "Operation successful!",  // Modal message (default: "Modal message")
+    closable: true,                    // Whether the modal can be closed (default: true)
+    spinner: null                      // Spinner type for loading modals (default: null)
 });
 ```
 
