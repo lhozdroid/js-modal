@@ -1,4 +1,4 @@
-# Vanilla JS Modal
+# JS Modal
 
 - [Description](#description)
 - [Features](#features)
